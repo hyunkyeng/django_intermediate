@@ -2,7 +2,7 @@
 
 {% block body %}
     <h1>Edit</h1>
-    <form action="{% url 'boards:update' board.pk %}" method="POST">
+    <form method="POST">  <!--원래는 <form action="{# url 'boards:edit' board.pk #}" method="POST"> 인데 안써도된다. -->
         {% csrf_token %}
         <label for="title">TITLE</label>
         <input type="text" name="title" id="title" value="{{ board.title }}"/>

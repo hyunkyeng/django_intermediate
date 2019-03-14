@@ -2,7 +2,7 @@
 
 {% block body %}
     <h1>New</h1>
-    <form action="{% url 'boards:create' %}" method="POST">
+    <form method="POST">   <!-- 원래는 <form action="{# url 'boards:new' #}" method="POST"> 인데 액션이 없으면 자기 자신인 new로 돌아오기때문에 안써도된다.-->
         {% csrf_token %}
         <label for="title">TITLE</label>
         <input type="text" name="title" id="title"/>
